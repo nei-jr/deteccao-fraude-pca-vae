@@ -16,6 +16,13 @@ Teste com 57.355 transações, das quais 492 (0,86%) são fraude.
 | Mahalanobis             | 0,71                | 99                 |
 | VAE (latente 8)         | 0,80                | 100                |
 
+## Visualização
+As fraudes (em vermelho) vistas pela PCA e pelo t-SNE, numa amostra com as 492 fraudes e 5.000 transações normais:
+
+![PCA e t-SNE com as fraudes destacadas](pca_vs_tsne_fraude.png)
+
+Uma parte das fraudes forma ilhas próprias no t-SNE, mas outra parte fica no meio das transações normais.
+
 ## O que aprendi
 - As colunas `V1` a `V28` do dataset já são componentes principais, então fazer PCA nelas é fazer "PCA em cima de PCA": depois de padronizar, quase todos os autovalores dão exatamente 1.
 - A fraude aparece nas direções de **menor** variância das transações normais. A PCA com poucas componentes descarta justamente essas direções; a distância de Mahalanobis dá mais peso a elas.
